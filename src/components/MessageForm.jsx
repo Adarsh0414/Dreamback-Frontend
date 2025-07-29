@@ -14,7 +14,7 @@ function MessageForm({ userEmail }) {
     }
 
     try {
-      const response = await axios.post('http://localhost:5001/api/messages', {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/messages`, {
         email: userEmail,
         message: content,
         unlockDate: unlockAt,

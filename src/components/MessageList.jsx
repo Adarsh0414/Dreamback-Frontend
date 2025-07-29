@@ -10,7 +10,7 @@ function MessageList({ userEmail }) {
     if (!userEmail) return;
 
     try {
-      const res = await axios.get(`http://localhost:5001/api/messages/${userEmail}`);
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/messages/${userEmail}`);
       const allMessages = res.data.data || [];
 
       const now = new Date();
